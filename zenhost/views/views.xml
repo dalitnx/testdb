@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+      
+      
+      
+   <record model="ir.ui.view" id="zenhost.form">
+      <field name="name">zenhost.form</field>
+      <field name="model">zenhost.zenhost</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+        <group> 
+          <field name="t1"/>
+          <field name="t2"/>
+          <field name="t3"/>
+          <field name="t4"/>
+        </group>
+                <notebook>
+                    <page string='first test'>
+                    </page>
+                    <page string="second test">
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record>
+      
+    <record model="ir.ui.view" id="zenhost.list">
+      <field name="name">zenhost list</field>
+      <field name="model">zenhost.zenhost</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="t1"/>
+          <field name="t2"/>
+          <field name="t3"/>
+          <field name="t4"/>
+         </form> 
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="zenhost.action_window">
+      <field name="name">zenhost window</field>
+      <field name="res_model">zenhost.zenhost</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="zenhost.action_server">
+      <field name="name">zenhost server</field>
+      <field name="model_id" ref="model_zenhost_zenhost"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="zenhost Main" id="zenhost.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Zenhosting test 1 " id="zenhost.menu_1" parent="zenhost.menu_root" action="zenhost.action_window" sequence="4"/>
+    <menuitem name="Zenhosting test 2 " id="zenhost.menu_2" parent="zenhost.menu_root" action="zenhost.action_window"  sequence="5"/>
+
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="zenhost.menu_1_list" parent="zenhost.menu_1"
+              action="zenhost.action_window"/>
+    <menuitem name="Server to list" id="zenhost" parent="zenhost.menu_2"
+              action="zenhost.action_server"/>
+-->
+  </data>
+</odoo>
