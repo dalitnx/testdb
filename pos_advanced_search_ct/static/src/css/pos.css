@@ -1,0 +1,30 @@
+.pos .searchbox input {
+    width: 150px;
+}
+
+/*Autocomplete */
+.ui-autocomplete {
+   max-height: 500px !important;
+   height: auto;
+   min-height:0px;
+   width: 150px;
+   background: #ffffff;
+   overflow-y: auto;
+   overflow-x: hidden;
+   z-index: 1000 !important;
+   cursor: pointer;
+   list-style: none;
+   width: 210px;
+   padding-left: 0px;
+   border-radius: 20px;
+}
+
+.ui-autocomplete li{
+    padding: 10px 10px;
+}
+
+.ui-state-focus {
+    background: none;
+    background-color: #7f82acb3;
+}
+

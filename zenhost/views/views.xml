@@ -11,10 +11,10 @@
         <form>
             <sheet>
         <group> 
-          <field name="t1"/>
-          <field name="t2"/>
-          <field name="t3"/>
-          <field name="t4"/>
+          <field name="t1" string="Employee name"/>
+          <field name="t2" string="Recrutement Date"/>
+          <field name="t3" placeholder="Empoloyees"/>
+          <field name="t4" string="supervisor Notes"/>
         </group>
                 <notebook>
                     <page string='first test'>

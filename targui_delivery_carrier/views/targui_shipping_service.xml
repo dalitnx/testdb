@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data>
+        <record id="delivery_carrier_targui_form" model="ir.ui.view">
+            <field name="name">delivery.carrier.targui.form</field>
+            <field name="model">delivery.carrier</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="odoo_shipping_service_apps.view_delivery_carrier_form_inherit_wk_shipping" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='Delivery Setting']" col='2' position="after">
+                    <group string="Targui Shipping Infomation " attrs="{'invisible':[('delivery_type', '!=', 'targui')]}">
+                        <field name="targui_mr_code" attrs="{'required':[('delivery_type','==','targui')]}" />
+                        <field name="targui_fixed_rate" attrs="{'required':[('delivery_type','==','targui')]}" />
+                    </group>
+                </xpath>
+                <xpath expr="//notebook" position='inside'>
+                    <page string="Targui Details" attrs="{'invisible': [('delivery_type', '!=', 'targui')]}">
+                        <group>
+                            <group>
+                                <field name="targui_test_username" attrs="{'required': [('delivery_type', '=', 'targui')]}" password="True"/>
+                                <field name="targui_test_password" attrs="{'required': [('delivery_type', '=', 'targui')]}" password="True"/>
+                            </group>
+                            <group>
+                                <field name="targui_prod_username" attrs="{'required': [('delivery_type', '=', 'targui')]}" password="True"/>
+                                <field name="targui_prod_password" attrs="{'required': [('delivery_type', '=', 'targui')]}" password="True"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="pos_advanced_search_ct assets" inherit_id="point_of_sale.index">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/pos_advanced_search_ct/static/src/css/pos.css" id="pos-stylesheet"/>
+                <script type="text/javascript" src="/pos_advanced_search_ct/static/src/js/pos.js"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

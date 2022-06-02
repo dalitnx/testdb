@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data>
+        <record forcecreate="True" id="packaging_targui" model="stock.package.type">
+            <field name="name">Targui Custom Packaging</field>
+            <field name="package_carrier_type">targui</field>
+            <field name= "shipper_package_code">targui_pkg</field>
+            <field name="height">10</field>
+            <field name="width">10</field>
+            <field name="packaging_length">10</field>
+            <field name="max_weight">50</field>
+            <field name="cover_amount">10</field>
+            <!-- <field name="qty">10</field> -->
+        </record>
+
+        <record forcecreate="True" id="product_targui" model="product.product">
+            <field name="name">Delivery by Targui</field>
+            <field name="default_code">Delivery</field>
+            <field name="type">service</field>
+            <field name="list_price">10.00</field>
+            <field name="standard_price">10.0</field>
+        </record>
+
+        <record forcecreate= "True" id= "product_packaging_targui" model= "product.packaging">
+            <field name= "name">Targui Custom Packaging</field>
+            <field name= "package_type_id" ref='packaging_targui'/>
+            <field name= "product_id" ref='product_targui'/>
+            <field name='qty'>10</field>
+        </record>
+
+        <record forcecreate="True" id="targui_delivery_carrier" model="delivery.carrier">
+            <field name="name">Targui</field>
+            <field name="delivery_type">targui</field>
+            <field name="product_id" ref="product_targui"/>
+            <field name="packaging_id" ref="product_packaging_targui"/>
+            <field name="extra_service_price">10</field>
+            <field name="void_shipment">True</field>
+            <field name="uom_id" ref='uom.product_uom_kgm'/>
+            <field name='delivery_uom'>KG</field>
+            <field name="image" type="base64" file="targui_delivery_carrier/static/src/img/tarqui.png"/>
+        </record>
+    </data>
+</odoo>
